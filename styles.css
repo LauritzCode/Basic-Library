@@ -3,19 +3,48 @@
 *::after {
     box-sizing: border-box;
     font-family: "Playwrite AU SA", serif;
+    margin: 0;
+    padding: 0;
+}
+
+.blur {
+    filter: blur(10px);
+    pointer-events: none; /* Prevents interaction with blurred content */
 }
 
 body {
     min-height: 100vh;
+    height: 100vh;
     background-image: url(/background.webp);
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .container {
+    position: fixed;
+    top: 0;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    position: absolute;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.container > * {
+    margin: 5px 20px;
+}
+
+.openFormBtn {
+    padding: 10px 20px;
+    border: 2px solid black;
+    cursor: pointer;
+    transition: 200ms;
+}
+
+.openFormBtn:hover {
+    transform: scale(1.125);
+
 }
 
 h1 {
@@ -23,6 +52,7 @@ h1 {
     font-weight: bolder;
     color: rgb(239, 227, 205);
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.75);
+    text-align: center;
 }
 
 .book-item {
@@ -64,7 +94,7 @@ h1 {
     backdrop-filter: blur(5px);
     border: 4px solid rgb(41, 22, 6);
     box-shadow: 0 0 0 5px rgb(116, 83, 57);
-    max-width: 100%;
+    width: 100%;
 }
 
 .bookshelf-wrap > * {
@@ -75,10 +105,94 @@ h1 {
     margin-bottom: 20px;
 }
 
-.book-info > :last-child {
+.book-info > :first-child {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.book-info > :nth-child(2) {
+    font-style: italic;
+}
+
+.book-info > :nth-child(4) {
     font-size: 2rem;
     border: 4px solid white;
     margin-top: auto;
     font-family: 'Times New Roman', Times, serif;
+}
+
+.book-info > button {
+    font-family: 'Times New Roman', Times, serif;
+    border: 4px solid white;
+    font-size: 1.5rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.form-wrap {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 400px;
+    background-color: white;
+    z-index: 1;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    border: 4px solid black;
+}
+
+.modal-wrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark transparent background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.content {
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+}
+
+.modal-wrap > :first-child {
+    align-self: center;
+}
+
+.book-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.book-form > * {
+    margin: 5px
+}
+
+.book-form > button {
+    margin-top: 20px;
+    cursor: pointer;
+    padding: 10px 20px;
+    width: 150px
+}
+
+.hide {
+    display: none;
+}
+
+.blur {
+    backdrop-filter: blur(20px);
 }
 

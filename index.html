@@ -11,28 +11,44 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Lauritz' Library</h1>
-    </div>
-    <div class="bookshelf-wrap">
-        <div class="book-item">
-            <div class="book-info">
-                <div class="title">Crime and Punishment</div>
-                <div class="author">Fyodor Dostoevski</div>
-                <div class="pages">206 pages</div>
-                <div class="read-status">Not read</div>
+
+    <div class="content"> <!-- New wrapper for main content -->
+        <div class="container">
+            <h1>Lauritz' Library</h1>
+            <button class="openFormBtn" id="openFormBtn">Add Book</button>
+        </div>
+        <div class="bookshelf-wrap">
+            <div class="book-item">
+                <div class="book-info">
+                    <div class="title">Crime and Punishment</div>
+                    <div class="author">Fyodor Dostoevski</div>
+                    <div class="pages">206 pages</div>
+                    <div class="read-status">Not read</div>
+                    <button class="remove-btn">Remove</button>
+                    <button class="toggle-btn">Toggle Read</button>
+                </div>
             </div>
         </div>
-        <div class="book-item">
-            <div class="book-info">
-                <div class="title">Crime and Punishment</div>
-                <div class="author">Fyodor Dostoevski</div>
-                <div class="pages">206 pages</div>
-                <div class="read-status">Not read</div>
-            </div>
-        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal-wrap hide" id="modal">
+        <div class="form-wrap">
+            <form class="book-form" id="book-form">
+                <input type="text" id="title" placeholder="Title of the book..." required> 
+                <input type="text" id="author" placeholder="Author of the book..." required> 
+                <input type="number" id="pages" placeholder="Number of pages..." required> 
+                <label>
+                    Read the book:
+                    <input type="checkbox" id="read">
+                </label> 
+                <button type="submit" id="addBookBtn">Add book</button>
+                <button type="button" id="cancelBtn">Cancel</button>
+            </form>
         </div>
     </div>
+
     <script src="script.js"></script>
 </body>
+
 </html>
