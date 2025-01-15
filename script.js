@@ -11,6 +11,14 @@ Book.prototype.toggleRead = function() {
     this.read = !this.read 
 }
 
+const openModalBtn = document.getElementById("openFormBtn");
+const addBookBtn = document.getElementById("addBookBtn");
+const content = document.querySelector(".content");
+const modalWrap = document.querySelector(".modal-wrap")
+const cancelBtn = document.getElementById("cancelBtn")
+const bookForm = document.getElementById("book-form");
+
+
 function addBook(book) {
     library.push(book)
     displayBooks()
@@ -56,17 +64,9 @@ function displayBooks() {
 }
 
 function removeBook(index) {
-    library.splice(index,1)
+    library.splice(index, 1)
     displayBooks()
 }
-
-
-const openModalBtn = document.getElementById("openFormBtn");
-const addBookBtn = document.getElementById("addBookBtn");
-const content = document.querySelector(".content");
-const modalWrap = document.querySelector(".modal-wrap")
-const cancelBtn = document.getElementById("cancelBtn")
-const bookForm = document.getElementById("book-form");
 
 cancelBtn.addEventListener("click", () => {
     content.classList.remove("blur")
