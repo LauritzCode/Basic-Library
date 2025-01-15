@@ -1,0 +1,84 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    font-family: "Playwrite AU SA", serif;
+}
+
+body {
+    min-height: 100vh;
+    background-image: url(/background.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: bolder;
+    color: rgb(239, 227, 205);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.75);
+}
+
+.book-item {
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    border-radius: 10px;
+    border: 6px solid black;
+    width: 300px;
+    height: 500px;
+    background: linear-gradient(rgb(31, 31, 27) 45%, rgb(125, 39, 30) 45%);
+}
+
+.bookshelf-wrap::-webkit-scrollbar {
+    display: none; /* Hide scrollbar in WebKit browsers */
+}
+
+.bookshelf-wrap {
+    -ms-overflow-style: none;  /* Hide scrollbar in IE and Edge */
+    scrollbar-width: none;     /* Hide scrollbar in Firefox */
+}
+
+
+.book-info {
+    padding: 10px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    height: 100%;
+}
+
+.bookshelf-wrap {
+    display: flex;
+    overflow: hidden;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    backdrop-filter: blur(5px);
+    border: 4px solid rgb(41, 22, 6);
+    box-shadow: 0 0 0 5px rgb(116, 83, 57);
+    max-width: 100%;
+}
+
+.bookshelf-wrap > * {
+    margin: 2px;
+}
+
+.book-info > * {
+    margin-bottom: 20px;
+}
+
+.book-info > :last-child {
+    font-size: 2rem;
+    border: 4px solid white;
+    margin-top: auto;
+    font-family: 'Times New Roman', Times, serif;
+}
+
